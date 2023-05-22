@@ -2,23 +2,16 @@
 #include "Object.h"
 using namespace std;
 int main() {
-    int X; 
-    int Y;
-    int targetX;
-    int targetY;
-    cout << "Веедите координаты" << endl;
-    cin >> X;
-    cout << endl;
-    cin >> Y;
-    cout << "Введите координаты цели" << endl;
-    cin >> targetX;
-    cin >> targetY;
-    Coordinates startCoords(0, 0);
-    Object myObject(startCoords);
-    Coordinates newCoords(X, Y);
-    myObject.moveTo(newCoords);
-    cout << "Длина пройденного пути: " << myObject.getPathLength() << endl;
-    Coordinates targetCoords(targetX, targetY);
-    cout << "Расстояние до целевых координат: " << myObject.getDistanceTo(targetCoords) << endl;
+    UserEquipment user(Coordinates(0, 0, 0));
+    
+    user.move(24, 152, 0);
+    user.move(1045, 7, 10);
+    user.move(0, 0, 20);
+    
+    double pathLength = user.getPathLength();
+    cout << "Path length: " << pathLength << endl;
+    
+    user.convertToGeographicCoord();
+    
     return 0;
 }

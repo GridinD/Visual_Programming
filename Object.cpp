@@ -23,3 +23,18 @@ double Object::getDistanceTo(const Coordinates& coordinates) const {
     int y2 = coordinates.getY();
     return sqrt(pow(x2-x1, 2) + pow(y2-y1, 2));
 }
+
+void UserEquipment::move(double x, double y, double z){
+    Coordinates newCoord(x, y, z);
+    moveTo(newCoord);
+}
+
+UserEquipment::Coordinates getCurrentCoordinates() const {
+        return currentCoord;
+}
+
+void UserEquipment::convertToGeographicCoord() {
+        double latitude = currentCoord.getLatitude();
+        double longitude = currentCoord.getLongitude();
+        std::cout << "Latitude: " << latitude << ", Longitude: " << longitude << std::endl;
+}

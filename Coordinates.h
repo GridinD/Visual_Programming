@@ -5,18 +5,24 @@
 #include <cmath>
 class Coordinates {
 private:
-    int x; 
-    int y; 
+    double x;
+    double y;  
+    double z; 
+    double latitude;
+    double longitude;
 public:
-    Coordinates(int x = 0, int y = 0) {   
-        this->x = x;
-        this->y = y;
-    }
+    Coordinates(double x = 0, double y = 0, double z = 0);
 
-    void setCoordinates(int x, int y);
+    void setCoordinates(double x, double y, double z);
 
-    int getX() const;
+    double getX() const;
 
-    int getY() const;
+    double getY() const;
+    
+    double getZ() const;
+
+    double getLatitude() const;
+
+    double getLongitude() const;
 };
 #endif
